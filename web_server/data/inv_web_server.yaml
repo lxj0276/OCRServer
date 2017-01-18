@@ -1,0 +1,27 @@
+config:
+  wechat_mp:
+    appid: wx910c1661e0b7b82d
+    appsecret: 295f4680a23447ba421ccbb6eeb1618d
+    token: ec4890aaab49df5a59284cb7cf8fc1be
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    db: 1
+  system:
+    web_root: ../web_ui
+    download_root: ./downloads
+    wechat_root: http://your.domain.com/scanner
+  ocr_server:
+    url: http://localhost:5000
+    # image root must be absolute path
+    image_root: /Users/i064027/Work/Git/invoice-ocr/ocr_server
+  fin_server:
+    url: https://finapi-dm.anwdmz2.com
+    tenant_id: 32501985214560
+    user_id: 130008093990912
+
+#    url: https://finapi-fi.anwdmz2.com
+#    user_id: 127850175676416
+#    tenant_id: 31962503917664
+
+

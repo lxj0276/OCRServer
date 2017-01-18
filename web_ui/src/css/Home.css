@@ -1,0 +1,11 @@
+.homepage-fix-bottom{
+    position: fixed;
+    bottom: 50px;
+    left: 15px;
+    right: 15px;
+}
+.homepage-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

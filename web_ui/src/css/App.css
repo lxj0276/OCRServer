@@ -1,0 +1,42 @@
+body,html {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif
+}
+
+ul {
+    list-style: none
+}
+
+.page,body {
+    background-color: #f8f8f8
+}
+
+.link {
+    color: #1aad19
+}
+
+.container {
+    overflow: hidden
+}
+
+.container,.page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.page {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1
+}
+
+body .weui-dialog__bd{
+    word-break: normal;
+}

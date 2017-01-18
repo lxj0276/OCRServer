@@ -1,0 +1,147 @@
+cn_vat_sh:
+  name: VAT Invoice - China
+  image:
+    # 样板图片的完整尺寸，这是经过旋转后的; 这里的file文件并不参与运算
+    w: 1148
+    h: 724
+    file: ./recognize/cn_vat_sh/image.jpg
+  feature:  #特征图片, 尺寸坐标是相对于image. file会参与运算
+#    setting of feature.png
+#    x: 162
+#    y: 14
+#    w: 665
+#    h: 150
+#    file: ./recognize/cn_vat_sh/feature.png
+#    option:       # 针对特征匹配的选项, 可选
+#      minMatchCount: 20
+#      matchDistance: 0.7
+
+#   setting of feature3.png
+    x: 20
+    y: 21
+    w: 1105
+    h: 553
+    file: ./recognize/cn_vat_sh/feature3.png
+    option:       # 针对特征匹配的选项, 可选
+      minMatchCount: 30
+      matchDistance: 0.7
+
+  rotate: perspective    # 图片旋转的方法，可选有 'line' (按发票进行旋转), 'perspective' (默认，使用特征匹配进行旋转）
+  vaildate:       # 此种图像的验证方式，会把相应信息返回给接口
+    roi: DocType  # 相对应的roi的名字，在roi块中定义的
+  roi: #roi是感兴趣的区域，需要系统提取的
+    Customer:
+      type: text    # text/number/date/currency 这里主要的内容类型。准确的设置值可以提高识别率，如ORC效果。默认text(简体中文)
+      x: 216
+      y: 163
+      w: 432
+      h: 101
+      ocr: true         # true表示需要调用OCR进行识别, 默认为true
+      hide: false       # 是否把这个roi，作为结果返回给接口。例如作为类型检查使用的roi，并不需要返回数据。
+      style: blue-font-enhance  # 此ROI的样式，可以增加识别效果。 目前可选值为 'blue-font'（蓝色复印字体），'black-font'（黑色字体）
+      line: 3           # 此ROI中，包含的文本行数。默认1。此参数会控制字体大小。
+    DocNumber:
+      type: number
+      x: 826
+      y: 42
+      w: 151
+      h: 55
+      style: black-font
+    DocDate:
+      type: date
+      x: 912
+      y: 119
+      w: 185
+      h: 37
+      style: blue-font-enhance
+    Total:
+      type: currency
+      x: 873
+      y: 508
+      w: 219
+      h: 38
+      style: blue-font-enhance
+    Items:
+      x: 55
+      y: 299
+      w: 1038
+      h: 113
+      style: blue-font-enhance
+    DocType:
+      type: number
+      x: 164
+      y: 51
+      w: 209
+      h: 41
+      hide: true
+      style: black-font
+
+taxi_sh:
+  name: Taxi Invoice - Shanghai
+  image:
+    w: 503
+    h: 765
+    file: ./recognize/taxi_sh/image.jpg
+  feature:
+    x: 9
+    y: 164
+    w: 129
+    h: 556
+    file: ./recognize/taxi_sh/feature2.png
+    option:       # 针对特征匹配的选项, 可选
+      minMatchCount: 20
+      matchDistance: 0.7
+  vaildate:
+    roi: DocNumber
+  roi:
+    DocNumber:
+      type: number
+      x: 134
+      y: 234
+      w: 212
+      h: 34
+    Total:
+      type: currency
+      x: 287
+      y: 672
+      w: 124
+      h: 45
+      style: black-font
+    DocDate:
+      type: date
+      x: 194
+      y: 420
+      w: 225
+      h: 41
+      style: black-font
+    Customer:
+      type: number
+      x: 219
+      y: 374
+      w: 181
+      h: 39
+
+rmb_100:
+  name: 100 RMB
+  image:
+    w: 1216
+    h: 599
+    file: ./recognize/rmb_100/image.jpg
+  feature:
+    x: 258
+    y: 48
+    w: 450
+    h: 275
+    file: ./recognize/rmb_100/feature.png
+  vaildate:
+    roi: DocNumber
+  roi:
+    DocNumber:
+      type: text
+      x: 33
+      y: 434
+      w: 264
+      h: 67
+
+
+

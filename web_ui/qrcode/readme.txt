@@ -1,0 +1,1 @@
+put qrcode image to this folder, name as 'qrcode.jpg'

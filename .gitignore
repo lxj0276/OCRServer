@@ -1,0 +1,12 @@
+/ocr_server/tmp/
+
+/web_ui/node_modules/
+/web_ui/build/
+
+/web_server/node_modules/
+/web_server/downloads/
+/web_server/data/invoices.json
+/web_server/data/store.yaml
+
+.DS_Store
+*/.idea/
